@@ -12,9 +12,6 @@
 
 Authorization: Bearer {ACCESS_TOKEN}
 
-yaml
-Copy
-Edit
 
 ---
 
@@ -22,17 +19,11 @@ Edit
 
 POST https://my.miladrajabi.com/api/create-payment
 
-shell
-Copy
-Edit
 
 ### Headers:
 Content-Type: application/json
 Authorization: Bearer {ACCESS_TOKEN}
 
-css
-Copy
-Edit
 
 ### Body:
 ```json
@@ -62,9 +53,6 @@ Edit
   "authority": "A00000000000000000001"
 }
 Response:
-json
-Copy
-Edit
 {
   "success": true,
   "status": "success",

@@ -32,23 +32,14 @@ Authorization: Bearer {ACCESS_TOKEN}
   "order_id": "ORD-12345"
 }
 Response:
-json
-Copy
-Edit
 {
   "success": true,
   "payment_link": "https://www.zarinpal.com/pg/StartPay/A00000000000000000001",
   "authority": "A00000000000000000001"
 }
 2️⃣ بررسی وضعیت پرداخت (اختیاری)
-nginx
-Copy
-Edit
 POST https://my.miladrajabi.com/api/verify-payment
 Body:
-json
-Copy
-Edit
 {
   "authority": "A00000000000000000001"
 }

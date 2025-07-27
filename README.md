@@ -30,8 +30,8 @@ Authorization: Bearer <ACCESS_TOKEN>
 * **Base URL**: `https://zarinpay.me/api`
 * **مسیرها**:
 
-  * `/create_payment`
-  * `/verify_payment`
+  * `/create-payment`
+  * `/verify-payment`
 
 هر دو نقطه‌ٔ ورود از روش HTTP POST استفاده می‌کنند و داده‌ها را به صورت JSON ارسال و دریافت می‌کنند.
 
@@ -77,7 +77,7 @@ Authorization: Bearer <ACCESS_TOKEN>
 
 ### 4.1. ایجاد درخواست پرداخت (Create Payment)
 
-* **مسیر**: `POST /create_payment`
+* **مسیر**: `POST /create-payment`
 * **بدنه درخواست** (JSON):
 
   ```json
@@ -114,7 +114,7 @@ Authorization: Bearer <ACCESS_TOKEN>
 
 ### 4.2. تأیید پرداخت (Verify Payment)
 
-* **مسیر**: `POST /verify_payment`
+* **مسیر**: `POST /verify-payment`
 * **بدنه درخواست** (JSON):
 
   ```json

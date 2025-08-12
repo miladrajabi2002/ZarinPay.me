@@ -34,10 +34,7 @@ curl_close($ch);
 $result = json_decode($response, true);
 
 if (isset($result['success']) && $result['success'] === true) {
-   session_start();
-   $_SESSION['authority'] = $result['authority'];
-   $_SESSION['order_id'] = $order_id;
-   header('Location: ' . 'https://www.zarinpal.com/pg/StartPay/' . $result['authority']);
+   header('Location: ' . $result['payment_url']);
    exit;
 } else {
    echo "خطا در ایجاد درگاه پرداخت:\n";

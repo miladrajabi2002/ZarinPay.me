@@ -1,13 +1,7 @@
 # درگاه پرداخت سریع بدون نیاز به کد مالیاتی
 
-برای شروع کار با این سرویس و دریافت `ACCESS_TOKEN`، لطفاً دو اسکریپت `successful.php` و `failed.php` را در مسیر دلخواه سرور خود (مثلاً `/pay/`) قرار دهید و URLهای callback نهایی را به همراه `ACCESS_TOKEN` زرین پال خود را به تیم پشتیبانی ما ارسال کنید:
+برای شروع کار با این سرویس و دریافت `ACCESS_TOKEN` به تیم پشتیبانی ما پیام بدین:
 
-* **successful.php**: مسیر بازگشت پرداخت‌های موفق
-
-  * مثال: `https://your-domain.com/pay/successful.php`
-* **failed.php**: مسیر بازگشت پرداخت‌های ناموفق
-
-  * مثال: `https://your-domain.com/pay/failed.php`
 
 پس از دریافت `ACCESS_TOKEN`، برای همه درخواست‌های API، هدر زیر را ارسال نمایید:
 
@@ -85,11 +79,14 @@ Authorization: Bearer <ACCESS_TOKEN>
     "amount": 10000,        // مبلغ به تومان
     "order_id": "654321", // شناسه سفارش در سیستم شما
     "customer_user_id": "2326546856", // شناسه کاربر
-    "description": "buy acconut 654321"   // توضیحات
+    "description": "buy acconut 654321",   // توضیحات
+    "callback_url": "https://domain.com/callback.php",   // آدرس کالبک
+    "type": "card"   // روش پرداخت 
   }
   ```
 
-مدت زمان فعال بودن تراکنش هم 20 دقیقه از زمان ساخت می باشد
+درحال حاضر فقط روش card (کارت به کارت خودکار) فعال هستش
+مدت زمان فعال بودن تراکنش هم 30 دقیقه از زمان ساخت می باشد
 در صورتی که وضعیت سفارشتون `PENDING` باشد اگر با یک `order_id` دوبار برای ساخت درگاه درخواست بدین همون نتیجه و لینک قبل را میگیرید و بعد از کنسل شدن یا پرداخت امکان ساخت درگاه با اون `order_id` نمیباشد
   
 * **پاسخ موفقیت‌آمیز**:
@@ -97,8 +94,8 @@ Authorization: Bearer <ACCESS_TOKEN>
   ```json
   {
     "success": true,
-    "payment_link": "https://www.zarinpal.com/pg/StartPay/ABCDEF123456",
-    "authority": "ABCDEF123456"
+    "payment_link": "https://www.zarinpay.me/pay/A00000000000000000000000000grjfza5o6",
+    "authority": "A00000000000000000000000000grjfza5o6"
   }
   ```
 * **پاسخ خطا**:
@@ -119,7 +116,7 @@ Authorization: Bearer <ACCESS_TOKEN>
 
   ```json
   {
-    "authority": "ABCDEF123456"
+    "authority": "A00000000000000000000000000grjfza5o6"
   }
   ```
 * **پاسخ موفقیت‌آمیز**:

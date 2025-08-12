@@ -1,13 +1,11 @@
 <?php
 
-session_start();
-
-if (!empty($_SESSION['authority']) && !empty($_SESSION['order_id']) || isset($_POST['authority']) && isset($_POST['order_id'])) {
+if (isset($_POST['authority']) && isset($_POST['order_id'])) {
    $accessToken = ''; 
    $bot_username = 'ZarinPayMebot';
   
-   $authority = $_SESSION['authority'] ?? $_POST['authority'];
-   $order_id = $_SESSION['order_id'] ?? $_POST['order_id'];
+   $authority = $_POST['authority'];
+   $order_id = $_POST['order_id'];
   
    try {
 
@@ -50,9 +48,6 @@ if (!empty($_SESSION['authority']) && !empty($_SESSION['order_id']) || isset($_P
          'success' => false,
          'error' => $e->getMessage()
       ));
-
-      session_unset();
-      session_destroy();
 
       exit;
    }
@@ -223,9 +218,5 @@ if (!empty($_SESSION['authority']) && !empty($_SESSION['order_id']) || isset($_P
    http_response_code(404);
    exit;
 }
-
-session_unset();
-session_destroy();
-
 
 ?>

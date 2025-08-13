@@ -7,7 +7,9 @@ $data = [
    "amount" => $order['amount'], // قیمت به ریال
    "order_id" => $order_id, // شناسه تراکنش
    "customer_user_id" => $order['telegram_id'], // شناسه کاربر
-   "description" => "خرید اشتراک ..."
+   "description" => "خرید اشتراک ...",
+   "callback" => "url",
+   "type" => "card"
 ];
 
 $jsonData = json_encode($data);

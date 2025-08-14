@@ -36,7 +36,7 @@ curl_close($ch);
 $result = json_decode($response, true);
 
 if (isset($result['success']) && $result['success'] === true) {
-   header('Location: ' . $result['payment_url']);
+   header('Location: ' . $result['payment_link']);
    exit;
 } else {
    echo "خطا در ایجاد درگاه پرداخت:\n";

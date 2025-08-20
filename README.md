@@ -277,4 +277,4 @@ curl -X POST https://zarinpay.me/api/create-payment \
 ## 🔗 لینک‌ها
 
 🌐 [وبسایت زرین‌پی](https://zarinpay.me)  
-💻 [ریپو گیت‌هاب](https://github.com/zarinpay)
+💻 [ریپو گیت‌هاب](https://github.com/miladrajabi2002/ZarinPay.me)
